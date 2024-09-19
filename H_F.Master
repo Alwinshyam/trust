@@ -1,0 +1,187 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="H_F.master.cs" Inherits="Charity.H_F" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder></title>
+    <link rel="stylesheet" href="ASSETS/WEBSITE/CSS/STYLE.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header>
+            <div class="header-container">
+                <div class="logo">
+                    <img src="/ASSETS/WEBSITE/IMAGES/logo.jpeg" alt="EBPO Logo" />
+                    <h1>EBPO</h1>
+                </div>
+                <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+                <nav>
+                    <ul id="menu">
+                        <li><a href="\HOME\Default.aspx">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#about">About Us</a>
+                            <div class="dropdown-content">
+                                <a href="\ABOUTUS\VISION.aspx">Vision & Mission</a>
+                                <a href="#team">Our Team</a>
+                                <a href="#achievements">Achievements</a>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#services">Services</a>
+                            <div class="dropdown-content">
+                                <a href="#livelihood">Women Livelihood and Social Services</a>
+                                <a href="#circular-economy">Circular Economy Best Practices</a>
+                                <a href="#career">Career Development - Training Program & Job Opportunities Creation</a>
+                                <a href="#agriculture">Agriculture & Farmers Welfare</a>
+                            </div>
+                        </li>
+                        <li><a href="#donate" onclick="openPopup()">Donate</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+
+        <!-- Footer Section -->
+        <footer class="footer">
+            <section class="bg-light py-4 py-md-5 py-xl-8 border-top border-light">
+                <div class="container overflow-hidden">
+                    <div class="row gy-4 gy-lg-0 justify-content-xl-between">
+                        <!-- Widget 1: Logo -->
+                        <div class="col-12 col-md-4 col-lg-3 col-xl-2">
+                            <div class="widget">
+                                <a href="#!">
+                                    <img src="/ASSETS/WEBSITE/IMAGES/logo.jpeg" alt="EBPO Logo" width="175" height="57">
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Widget 2: Contact Information -->
+                        <div class="col-12 col-md-4 col-lg-3 col-xl-2">
+                            <div class="widget">
+                                <h4 class="widget-title mb-4">Get in Touch</h4>
+                                <address class="mb-4">8014 Edith Blvd NE, Albuquerque, New York, United States</address>
+                                <p class="mb-1">
+                                    <a class="link-secondary text-decoration-none" href="tel:+15057922430">(505) 792-2430</a>
+                                </p>
+                                <p class="mb-0">
+                                    <a class="link-secondary text-decoration-none" href="mailto:demo@yourdomain.com">demo@yourdomain.com</a>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Widget 3: Quick Links -->
+                        <div class="col-12 col-md-4 col-lg-3 col-xl-2">
+                            <div class="widget">
+                                <h4 class="widget-title mb-4">Learn More</h4>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">
+                                        <a href="#!" class="link-secondary text-decoration-none">Home</a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a href="#!" class="link-secondary text-decoration-none">Contact</a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a href="#!" class="link-secondary text-decoration-none">Gallery</a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a href="#!" class="link-secondary text-decoration-none">Report</a>
+                                    </li>
+                                    <li class="mb-0">
+                                        <a href="#!" class="link-secondary text-decoration-none">About us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Widget 4: Focus Areas -->
+                        <div class="col-12 col-lg-3 col-xl-4">
+                            <div class="widget">
+                                <h4 class="widget-title mb-4">Focus Areas</h4>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">
+                                        <a href="#!" class="link-secondary text-decoration-none">Self Help Group</a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a href="#!" class="link-secondary text-decoration-none">Joint Linkage Liability Group</a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a href="#!" class="link-secondary text-decoration-none">Daily Wages and Farmers</a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a href="#!" class="link-secondary text-decoration-none">Job and Business Empowerment</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Copyright -->
+            <div class="bg-light py-4 py-md-5 py-xl-8 border-top border-light-subtle">
+                <div class="container overflow-hidden">
+                    <div class="row gy-4 gy-md-0 align-items-md-center">
+                        <div class="col-xs-12 col-md-7 order-1 order-md-0">
+                            <div class="copyright text-center text-md-start">
+                                &copy; 2024 EBPO. All rights reserved.
+                            </div>
+                            <div class="credits text-secondary text-center text-md-start mt-2 fs-8">
+                                Built by <a href="https://bootstrapbrain.com/" class="link-secondary text-decoration-none">BootstrapBrain</a> with <span class="text-primary">&#9829;</span>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-md-5 order-0 order-md-1">
+                            <div class="social-media-wrapper">
+                                <ul class="list-unstyled m-0 p-0 d-flex justify-content-center justify-content-md-end">
+                                    <li class="me-3">
+                                        <a href="#!" class="link-dark link-opacity-75-hover">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                                                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="me-3">
+                                        <a href="#!" class="link-dark link-opacity-75-hover">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+                                                <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.16-2.818-.414-.235-.098-.477-.212-.694-.375-.306-.277-.545-.662-.707-1.085-.219-.594-.342-1.228-.436-1.927-.074-.706-.126-1.52-.152-2.452l-.005-.14c-.009-.428-.012-1.078-.012-1.878v-.06c.001-1.037.036-2.147.11-3.298a8.11 8.11 0 0 1 .496-2.073c.162-.389.371-.767.617-1.131a2.005 2.005 0 0 1 1.418-.672c1.28-.271 5.44-.307 6.563-.307zM4.032 8l4.075-2.632v5.264L4.032 8z" />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="me-3">
+                                        <a href="#!" class="link-dark link-opacity-75-hover">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                                                <path d="M5.026 15c6.03 0 9.357-5.005 9.357-9.335 0-.143-.004-.286-.01-.428A6.68 6.68 0 0 0 16 4.378a6.49 6.49 0 0 1-1.889.517A3.29 3.29 0 0 0 15.553 3a6.65 6.65 0 0 1-2.09.796A3.29 3.29 0 0 0 7.88 6.9a9.308 9.308 0 0 1-6.768-3.42A3.28 3.28 0 0 0 4.7 8.58a3.267 3.267 0 0 1-1.488-.41v.041c0 1.57 1.106 2.88 2.574 3.17-.27.073-.556.113-.844.113-.207 0-.407-.02-.606-.058.407 1.278 1.588 2.213 2.985 2.239a6.584 6.584 0 0 1-4.088 1.39A9.366 9.366 0 0 0 5.026 15z" />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" class="link-dark link-opacity-75-hover">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                                                <path d="M12.12 0H3.88C1.736 0 0 1.736 0 3.88v8.24C0 14.264 1.736 16 3.88 16h8.24C14.264 16 16 14.264 16 12.12V3.88C16 1.736 14.264 0 12.12 0zM8 3.333a4.667 4.667 0 1 1 0 9.333 4.667 4.667 0 0 1 0-9.333zM12.4 4.8a.4.4 0 1 1-.8 0 .4.4 0 0 1 .8 0z" />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Popup for Donation -->
+        <div id="donate-popup" class="popup">
+            <div class="popup-content">
+                <span class="popup-close" onclick="closePopup()">&times;</span>
+                <h2>Donate to Our Cause</h2>
+                <p>Your generous donations help us continue our mission.</p>
+                <a href="#!" class="btn btn-primary">Donate Now</a>
+            </div>
+        </div>
+
+        <script src="ASSETS/WEBSITE/JS/SCRIPT.js"></script> <!-- Link to your JS file -->
+    </form>
+</body>
+</html>
